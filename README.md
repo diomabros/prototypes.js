@@ -1,6 +1,7 @@
 # prototypes.js
 (Very stupid) extensions to Javascript base prototypes
 
+#What it is
 A Javascript base prototypes extensions ready to use.
 
 # Installation
