@@ -12,7 +12,8 @@ if(!('startsWith' in String.prototype)) {
 	//Add JSDoc comment
 	String.prototype.startsWith = function(prefix) {
 		return this.indexOf(prefix) === 0;
-	}
+	};
+	
 }
 
 if(!('endsWith' in String.prototype)) {
