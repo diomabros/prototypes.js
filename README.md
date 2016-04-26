@@ -1,11 +1,11 @@
 # prototypes.js
 (Very stupid) extensions to Javascript base prototypes
 
-#What is it?
+## What is it?
 A Javascript base prototypes extensions ready to use.
 
-# Installation
+## Installation
 Are you fuc*ing kidding me?!
 
-# Usage
+## Usage
 Coming soon...very very soon :)
