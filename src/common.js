@@ -1,0 +1,1 @@
+var searchInPrototype = function(prop, proto) { return (prop in proto); };

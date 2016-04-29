@@ -1,4 +1,11 @@
-if(!('contains' in String.prototype)) {	
+var inString = function(prop) {
+
+	if (searchInPrototype)
+		return searchInPrototype(prop, String.prototype);
+
+};
+
+if(!inString('contains')) {	
 		
 	//Add JSDoc comment
 	String.prototype.contains = function(str, startIndex) {
@@ -7,7 +14,7 @@ if(!('contains' in String.prototype)) {
  
  }
  
-if(!('startsWith' in String.prototype)) {
+if(!inString('startsWith')) {
 	
 	//Add JSDoc comment
 	String.prototype.startsWith = function(prefix) {
@@ -16,7 +23,7 @@ if(!('startsWith' in String.prototype)) {
 	
 }
 
-if(!('endsWith' in String.prototype)) {
+if(!inString('endsWith')) {
 	
 	//Add JSDoc comment
 	String.prototype.endsWith = function(suffix) {
@@ -27,7 +34,7 @@ if(!('endsWith' in String.prototype)) {
 	
 }
 
-if(!('random' in String.prototype)) {
+if(!inString('random')) {
 	
 	//Add JSDoc comment
 	String.prototype.random = function(length) {
