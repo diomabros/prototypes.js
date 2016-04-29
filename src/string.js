@@ -119,11 +119,19 @@ if(!inString('trimOff')) {
 if(!inString('random')) {
 	
 	//Add JSDoc comment
-	String.prototype.random = function(length) {
+	String.prototype.random = function(length, possibleChars) {
 		if (!length)
 			length = 5;
+		
+		var toReturn = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		if (possibleChars)
+			possible = possibleChars;
+		
+		for( var i=0; i < length; i++ )
+			toReturn += possible.charAt(Math.floor(Math.random() * possible.length));
 			
-		//Calculate rand string
+		return toReturn;
 	};
 	
 }
