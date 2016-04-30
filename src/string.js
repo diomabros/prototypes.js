@@ -6,27 +6,56 @@ var inString = function(prop) {
 };
 
 if(!inString('contains')) {	
-		
-	//Add JSDoc comment
+    
+	/**
+	 * Check if a substring is contained in string
+	 * @param   {string}  str        substring to search
+	 * @param   {string}  startIndex index from start to search
+	 * @returns {boolean} True if substring is contained, else false
+	 */
 	String.prototype.contains = function(str, startIndex) {
+        
+        if (typeof str !== 'string')
+            return false;
+        
+        if (typeof startIndex !== 'number')
+            startIndex = 0;
+        
 		return -1 !== String.prototype.indexOf.call(this, str, startIndex);
+        
 	};
  
  }
  
 if(!inString('startsWith')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Check if a string starts with a prefix
+	 * @param   {string}  prefix Prefix to search
+	 * @returns {boolean} True if string starts with prefix, else false
+	 */
 	String.prototype.startsWith = function(prefix) {
+        
+        if (typeof prefix !== 'string')
+            return false;
+        
 		return this.indexOf(prefix) === 0;
+        
 	};
 	
 }
 
 if(!inString('endsWith')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Check if a string ends with a suffix
+	 * @param   {string}  suffix Suffix to search
+	 * @returns {boolean} True if ends with suffix, else false
+	 */
 	String.prototype.endsWith = function(suffix) {
+        if (typeof suffix !== 'string')
+            return false;
+        
 		if (this.length < suffix.length)
 			return false;
 		return this.lastIndexOf(suffix) === (this.length - suffix.length);
@@ -36,9 +65,14 @@ if(!inString('endsWith')) {
 
 if(!inString('capitalizeFirstLetter')) {
 	
-	//Add JSDoc comment
-	String.prototype.capitalizeFirstLetter = function () {
+	/**
+	 * Capitalize first letter of string
+	 * @returns {string} String with first letter capitalized
+	 */
+	String.prototype.capitalizeFirstLetter = function () {        
+        
 	    return this.charAt(0).toUpperCase() + this.slice(1);
+        
 	}
 	
 }
@@ -47,6 +81,9 @@ if(!inString('rtrim')) {
 	
 	//Add JSDoc comment
 	String.prototype.rtrim = function(toCut){
+        if (typeof toCut !== 'string')
+            toCut = " ";
+        
 	    if (!toCut)
 	        toCut = " ";
 	    
