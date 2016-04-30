@@ -5,7 +5,7 @@
 Download proto.min.js (in ready folder) file and include it in your HTML page like:
 
 ```html
-<script type="text/javascript" src="path_to_proto.min.js"></script>
+<script type="text/javascript" src="path/to/proto.min.js"></script>
 ```
 
 If you need to debug merged files, you can use proto.js.
