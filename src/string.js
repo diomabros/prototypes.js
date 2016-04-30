@@ -79,13 +79,15 @@ if(!inString('capitalizeFirstLetter')) {
 
 if(!inString('rtrim')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Trim all the "to cut" string from the right
+	 * @param   {string} toCut String to cut, if ometted white space intended
+	 * @returns {string} String right-trimmed
+	 */
 	String.prototype.rtrim = function(toCut){
+        
         if (typeof toCut !== 'string')
             toCut = " ";
-        
-	    if (!toCut)
-	        toCut = " ";
 	    
 	    if (typeof toCut !== 'string')
 	        throw "parameter must be string, " + (typeof toCut) + " passed";
@@ -111,13 +113,15 @@ if(!inString('rtrim')) {
 
 if(!inString('ltrim')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Trim all the "to cut" string from the left
+	 * @param   {string} toCut String to cut, if ometted white space intended
+	 * @returns {string} String left-trimmed
+	 */
 	String.prototype.ltrim = function(toCut){
-	    if (!toCut)
-	        toCut = " ";
-	    
+        
 	    if (typeof toCut !== 'string')
-	        throw "parameter must be string, " + (typeof toCut) + " passed";
+	        toCUt = " ";
 	    
 	    var toReturn = this;
 	    
@@ -140,7 +144,11 @@ if(!inString('ltrim')) {
 
 if(!inString('trimOff')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Trim all the "to cut" string from the left and right
+	 * @param   {string} toCut String to cut, if ometted white space intended
+	 * @returns {string} String trimmed
+	 */
 	String.prototype.trimOff = function(toCut){
 	    if (!toCut)
 	        toCut = " ";
@@ -155,15 +163,20 @@ if(!inString('trimOff')) {
 
 if(!inString('random')) {
 	
-	//Add JSDoc comment
+	/**
+	 * Generate random string
+	 * @param   {number} length        Length of generated string, 5 if ometted
+	 * @param   {string} possibleChars All possible chars, a-z A-Z 0-9 if ometted
+	 * @returns {string} Generated string
+	 */
 	String.prototype.random = function(length, possibleChars) {
-		if (!length)
-			length = 5;
+        if (typeof length !== 'number')
+            length = 5;
 		
 		var toReturn = "";
-		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-		if (possibleChars)
-			possible = possibleChars;
+        
+		if (typeof possibleChars !== 'string')
+			possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 		
 		for( var i=0; i < length; i++ )
 			toReturn += possible.charAt(Math.floor(Math.random() * possible.length));
